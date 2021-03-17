@@ -7,9 +7,17 @@ import {loadCharacters} from '../actions'
 import Character from './Character'
 
 const Page = styled.div`
+    font-size: 1.25rem;
 `
-const SearchBar = styled.div``
-const SearchByName = styled.input``
+const SearchBar = styled.div`
+    display:flex;
+    justify-content: flex-end;
+`
+const SearchByName = styled.input`
+    width: 20%;
+    margin-right: 10%;
+    font-size:1.25rem;
+`
 
 const ColorOfCharacters = styled.div`
     font-weight: bold;
@@ -65,6 +73,7 @@ const Other = styled.p`
 const ListOfCharacters = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     /* height: 80vh; */
     width: 80vw;
     margin: auto;
@@ -74,7 +83,7 @@ const ListOfCharacters = styled.div`
 const CharacterList = styled.div`
     display: flex;
     /* flex-wrap: wrap; */
-    height: 30vh;
+    height: 35vh;
     width: 80vw;
     margin: auto;
     overflow-y: auto;

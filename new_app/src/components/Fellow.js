@@ -6,8 +6,22 @@ import {removeFromFellowship} from '../actions/index'
 
 const Page = styled.div`
     width: 10%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: .25rem;
+    height: 30vh;
+    background-image: linear-gradient(#E1DED7, 
+        #6F8EA3,
+        #505C68,
+        #884D23        
+        );
+`
+const Name = styled.h3`
+    text-align: center;
+    margin: 2rem 0 0;
+`
+const Race = styled.p`
+    text-align: center;
+    margin: .5rem 0;
 `
 
 const Fellow = props => {
@@ -22,7 +36,8 @@ const Fellow = props => {
 
     return (
         <Page onClick={handleClick}>
-            <a>{props.character.name}</a>
+            <Name>{props.character.name}</Name>
+            <Race><em>{props.character.race}</em></Race>
         </Page>
     )
 }

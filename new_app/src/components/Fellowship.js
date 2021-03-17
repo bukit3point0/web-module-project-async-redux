@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import Fellow from './Fellow'
 
 const Page = styled.div`
-    border: 1px solid black;
-    min-height: 100px;
+    margin: 4% 2% 0;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
 `
 
 const Fellowship = props => {

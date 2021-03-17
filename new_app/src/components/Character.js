@@ -5,12 +5,12 @@ import {addToFellowship} from '../actions/index'
 import styled from 'styled-components'
 
 const Page = styled.div`
-    width: 15%;
+    width: 18%;
 `
-const Name = styled.a`
+const Name = styled.p`
     font-weight: bold;
     margin: 0;
-    padding: 0;
+    padding: .5rem 0;
 `
 
 const Character = props => {
