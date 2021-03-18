@@ -29,7 +29,7 @@ const Character = props => {
                     {color:
                         character.race === "Human" 
                         || character.race === "Men"
-                            ? "#A0522D"
+                            ? "#804004"
                             : character.race === "Elf" 
                             || character.race === "Elves" 
                             || character.race === "Half-elven"
@@ -71,7 +71,7 @@ const Character = props => {
                                                     ? "#FFD700"
                                                     : character.race === "Ent"
                                                     || character.race === "Ents"
-                                                        ? "#8B4513"
+                                                        ? "#C9A26B"
                                                         : "black"
                     }
                 }

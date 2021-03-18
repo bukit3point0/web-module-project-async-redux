@@ -26,7 +26,7 @@ const ColorOfCharacters = styled.div`
     border-right: 1px solid black;
 `
 const Human = styled.p`
-    color: #A0522D;
+    color: #804004;
     margin: 0;
     padding: 0;
 `
@@ -61,7 +61,7 @@ const Heavenly = styled.p`
     padding: 0;
 `
 const Ent = styled.p`
-    color: #8B4513;
+    color: #C9A26B;
     margin: 0;
     padding: 0;
 `
@@ -95,18 +95,60 @@ const Characters = props => {
     
     const [search, setSearch] = useState("")
 
-    const races = []
+    // const races = []
 
-    characters.map(race => {
-        if(!races.includes(race.race))
-            races.push(race.race)
-    })
+    // characters.map(race => {
+    //     if(!races.includes(race.race))
+    //         races.push(race.race)
+    // })
     
-    console.log(races)
+    // console.log(races)
 
     useEffect(() => {
         props.loadCharacters()
     },[])
+
+    const handleSearch = e => {
+        setSearch(e.target.value)
+    }
+
+    const findHumans = e => {
+        setSearch("Human, Men")
+        console.log(`search`,search)
+    }
+
+    const findElves = e => {
+        setSearch("Elf, Elves, Half-elven")
+        console.log(`search`,search)
+    }
+
+    const findDwarves = e => {
+        setSearch("Dwarf, Dwarves")
+    }
+
+    const findHobbits = e => {
+        setSearch("Hobbit, Hobbits")
+    }
+
+    const findAnimals = e => {
+        setSearch("Great Spiders, Dragon, Dragons, Raven, Wolfhound, Werewolves, Horse, Eagles, Great Eagles, Eagle")
+    }
+
+    const findUrukhai = e => {
+        setSearch("Orcs, Black Uruk, Wraith, Goblin,Orc, Orc, Uruk-hai, Uruk-hai,Orc, Orc,Golbin, Urulóki, Balrog, Balrog, Stone-trolls, Vampires")
+    }
+
+    const findHeavenly = e => {
+        setSearch("Maiar, Ainur, God")
+    }
+
+    const findEnts = e => {
+        setSearch("Ent, Ents")
+    }
+
+    const findOthers = e => {
+        setSearch("NaN")
+    }
 
     return (
         <Page>
@@ -116,26 +158,29 @@ const Characters = props => {
                     type="text"
                     placeholder="Search by character"
                     id="searchByCharacter"
-                    onChange={event => {setSearch(event.target.value)}}
+                    onChange={handleSearch}
+                    // onChange={event => {setSearch(event.target.value)}}
                 />
             </SearchBar>
             <CharacterList>
                 <ColorOfCharacters>
-                    <Human>Humans</Human>
-                    <Elf>Elves</Elf>
-                    <Dwarf>Dwarves</Dwarf>
-                    <Hobbit>Hobbits</Hobbit>
-                    <Animals>Animals</Animals>
-                    <Enemies>Uruk-hai and other Enemies</Enemies>
-                    <Heavenly>Heavenly/Gods</Heavenly>
-                    <Ent>Ents</Ent>
-                    <Other>Other</Other>
+                    <Human onClick={findHumans}>Humans</Human>
+                    <Elf onClick={findElves}>Elves</Elf>
+                    <Dwarf onClick={findDwarves}>Dwarves</Dwarf>
+                    <Hobbit onClick={findHobbits}>Hobbits</Hobbit>
+                    <Animals onClick={findAnimals}>Animals</Animals>
+                    <Enemies onClick={findUrukhai}>Uruk-hai and other Enemies</Enemies>
+                    <Heavenly onClick={findHeavenly}>Heavenly/Gods</Heavenly>
+                    <Ent onClick={findEnts}>Ents</Ent>
+                    <Other onClick={findOthers}>Other</Other>
                 </ColorOfCharacters>
 
                 <ListOfCharacters>
                     {characters
                     .filter((person) => {
                         if (search === "") {
+                            return person
+                        } else if (search.includes(person.race)) {
                             return person
                         } else if (person.name.toLowerCase().includes(search.toLowerCase())) {
                             return person
