@@ -11,12 +11,18 @@ const Name = styled.p`
     font-weight: bold;
     margin: 0;
     padding: .5rem 0;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 `
 
 const Character = props => {
-
+    
     const {character, search} = props
-
+    
+    
     const handleClick = () => {
         props.addToFellowship(props.character)
     }
@@ -27,7 +33,7 @@ const Character = props => {
                 onClick={handleClick}
                 style={
                     {color:
-                        character.race === "Human" 
+                        (character.race === "Human" 
                         || character.race === "Men"
                             ? "#804004"
                             : character.race === "Elf" 
@@ -68,11 +74,11 @@ const Character = props => {
                                                 : character.race === "Maiar"
                                                 || character.race === "Ainur"
                                                 || character.race === "God"
-                                                    ? "#FFD700"
+                                                    ? "#9C8830"
                                                     : character.race === "Ent"
                                                     || character.race === "Ents"
                                                         ? "#C9A26B"
-                                                        : "black"
+                                                        : "black"),        
                     }
                 }
             >

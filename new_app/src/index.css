@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #C1C2CE;
+  background-image: url(./images/the-true-fellowship.jpg);
+  background-size: cover;
+  background-repeat: none;
 }
 
 code {

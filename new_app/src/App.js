@@ -10,6 +10,7 @@ import gollum from './images/kisspng-gollum-aragorn-gandalf-the-lord-of-the-ring
 const Page = styled.div``
 const CharactersChoice = styled.h1`
   text-align: center;
+  text-shadow: .75px .75px 1px #C5A754;
 `
 const Gollum = styled.img`
   width: 5rem;
