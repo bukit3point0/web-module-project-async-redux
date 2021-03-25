@@ -268,7 +268,7 @@ const Characters = props => {
                         person.race.toLowerCase().includes(search.toLowerCase())) {
                             return person
                         }
-                    })
+                    }) // eslint-disable-line react-hooks/exhaustive-deps
                     .map(person => {
                         return (
                             <Character 
