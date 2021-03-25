@@ -187,7 +187,7 @@ const Characters = props => {
 
     useEffect(() => {
         loadCharacters()
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSearch = e => {
         setSearch(e.target.value)
