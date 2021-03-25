@@ -267,8 +267,10 @@ const Characters = props => {
                         } else if (person.name.toLowerCase().includes(search.toLowerCase()) ||
                         person.race.toLowerCase().includes(search.toLowerCase())) {
                             return person
+                        } else {
+                            return person
                         }
-                    }) // eslint-disable-line react-hooks/exhaustive-deps
+                    })
                     .map(person => {
                         return (
                             <Character 
