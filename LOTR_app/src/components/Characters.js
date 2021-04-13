@@ -172,6 +172,7 @@ const Characters = props => {
     const {characters, loadCharacters} = props
 
     const [search, setSearch] = useState("")
+    console.log(search)
 
     const filteredCharacters = characters.filter(character => character.name !== "MINOR_CHARACTER")
     
@@ -229,6 +230,18 @@ const Characters = props => {
         setSearch("NaN")
     }
 
+    const filterThrough = (person) => {
+        if (search.includes(person.race)) {
+            console.log(`first ${person}`)
+            return person
+        } else if (person.name.toLowerCase().includes(search.toLowerCase()) 
+        || person.race.toLowerCase().includes(search.toLowerCase())) {
+            console.log(`secsearch ${search}`)
+            console.log(`second ${person}`)
+            return person
+        }
+    }
+
     return (
         <Page>
             <SearchBar>
@@ -257,15 +270,15 @@ const Characters = props => {
             </SearchBar>
             <CharacterList>
                 
-                <ListOfCharacters>
+                {/* <ListOfCharacters>
                     {filteredCharacters
                     .filter(person => {
                         if (search === "") {
                             return person
                         } else if (search.includes(person.race)) {
                             return person
-                        } else if (person.name.toLowerCase().includes(search.toLowerCase()) ||
-                        person.race.toLowerCase().includes(search.toLowerCase())) {
+                        } else if (person.name.toLowerCase().includes(search.toLowerCase()) 
+                        || person.race.toLowerCase().includes(search.toLowerCase())) {
                             return person
                         } else {
                             return person
@@ -274,9 +287,22 @@ const Characters = props => {
                     .map(person => {
                         return (
                             <Character 
-                            key={person.id} 
-                            character={person} 
-                            search={search}/>
+                                key={person.id} 
+                                character={person} 
+                            />
+                        )
+                    })
+                    }
+                </ListOfCharacters> */}
+                <ListOfCharacters>
+                    {filteredCharacters
+                    .filter(person => filterThrough(person))
+                    .map(person => {
+                        return(
+                            <Character
+                                key={person.id}
+                                character={person}
+                            />
                         )
                     })
                     }
