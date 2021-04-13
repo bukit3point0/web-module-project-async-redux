@@ -228,16 +228,13 @@ const Characters = props => {
 
     const findOthers = e => {
         setSearch("NaN")
-    }
-
+    } 
+    
     const filterThrough = (person) => {
         if (search.includes(person.race)) {
-            console.log(`first ${person}`)
             return person
         } else if (person.name.toLowerCase().includes(search.toLowerCase()) 
         || person.race.toLowerCase().includes(search.toLowerCase())) {
-            console.log(`secsearch ${search}`)
-            console.log(`second ${person}`)
             return person
         }
     }
